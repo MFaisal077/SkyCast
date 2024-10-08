@@ -1,6 +1,7 @@
+/* General Body Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    background-color: #e0eafc; /* Softer, calming background color */
     margin: 0;
     padding: 0;
     display: flex;
@@ -9,36 +10,126 @@ body {
     height: 100vh;
 }
 
+/* Centered container styling */
 .container {
     text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.15); /* Transparent white for glass effect */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 30px;
+    border-radius: 15px; /* Softer corner radius */
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2); /* Slightly more prominent shadow */
+    max-width: 350px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover effect for the container */
+.container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for input and buttons */
 input, button {
-    padding: 10px;
-    margin: 5px;
-    font-size: 16px;
+    padding: 12px 20px; /* More padding for a larger touch target */
+    margin: 10px 0; /* Space between elements */
+    font-size: 18px; /* Larger font for readability */
+    width: 100%; /* Full width for form elements */
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
 }
 
+/* Input focus effect */
+input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button styling */
 button {
     cursor: pointer;
-    background-color: #007BFF;
+    background-color: #007BFF; /* Primary color */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight scale effect */
+}
+
+/* Weather information section styling */
 .weather-info {
-    margin-top: 20px;
+    margin-top: 25px;
+    text-align: center; /* Center aligned text for a card effect */
+    background: linear-gradient(145deg, #f0f0f0, #e0eafc); /* Gradient background */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    position: relative;
+    transition: all 0.3s ease;
 }
 
+.weather-info:hover {
+    transform: scale(1.05); /* Slight scale effect */
+}
+
+/* Temperature styling */
 .weather-info h2 {
-    font-size: 24px;
+    font-size: 60px; /* Large temperature display */
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Temperature icon next to the number */
+.weather-info h2::before {
+    content: url('https://path-to-weather-icon.svg'); /* Insert appropriate weather icon */
+    display: inline-block;
+    margin-right: 10px;
+    width: 40px; /* Icon size */
+}
+
+/* Detailed weather information */
 .weather-info p {
-    font-size: 18px;
+    font-size: 20px;
+    color: #555;
+}
+
+/* Gradient effect for different temperatures (optional) */
+.weather-info.cold {
+    background: linear-gradient(145deg, #a0c4ff, #e0eafc); /* Cool gradient */
+}
+
+.weather-info.warm {
+    background: linear-gradient(145deg, #ffe29f, #ffc107); /* Warm gradient */
+}
+
+.weather-info.hot {
+    background: linear-gradient(145deg, #ff9a9e, #fcb69f); /* Hot gradient */
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    input, button {
+        font-size: 16px;
+    }
+
+    .weather-info h2 {
+        font-size: 50px;
+    }
 }
