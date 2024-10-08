@@ -133,3 +133,18 @@ button:hover {
         font-size: 50px;
     }
 }
+.sign-in {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.sign-in button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
