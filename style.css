@@ -1,150 +1,97 @@
-/* General Body Styling */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #e0eafc; /* Softer, calming background color */
-    margin: 0;
-    padding: 0;
+    background: #8C52FF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     height: 100vh;
+    margin: 0;
 }
 
-/* Centered container styling */
-.container {
+#weather-container {
+    background: rgba(255, 255, 255, 0.3);
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
-    background: rgba(255, 255, 255, 0.15); /* Transparent white for glass effect */
-    backdrop-filter: blur(10px); /* Frosted glass effect */
-    padding: 30px;
-    border-radius: 15px; /* Softer corner radius */
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2); /* Slightly more prominent shadow */
-    max-width: 350px;
-    width: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect for the container */
-.container:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+h2, label, p {
+    color: #fff;
+    margin: 8px 0;
 }
 
-/* Styling for input and buttons */
-input, button {
-    padding: 12px 20px; /* More padding for a larger touch target */
-    margin: 10px 0; /* Space between elements */
-    font-size: 18px; /* Larger font for readability */
-    width: 100%; /* Full width for form elements */
+input {
+    width: calc(100% - 16px);
+    padding: 8px;
     box-sizing: border-box;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    transition: all 0.3s ease;
+    border-radius: 10px;
+    border: 1px solid white;
+    margin-top: 20px;
 }
 
-/* Input focus effect */
-input:focus {
-    outline: none;
-    border-color: #007BFF;
-    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
-}
-
-/* Button styling */
 button {
-    cursor: pointer;
-    background-color: #007BFF; /* Primary color */
+    background: #debff4;
     color: white;
+    padding: 10px;
     border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100px;
+    font-size: 15px;
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: scale(1.05); /* Slight scale effect */
+    background: #8b48d7;
 }
 
-/* Weather information section styling */
-.weather-info {
-    margin-top: 25px;
-    text-align: center; /* Center aligned text for a card effect */
-    background: linear-gradient(145deg, #f0f0f0, #e0eafc); /* Gradient background */
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
-    position: relative;
-    transition: all 0.3s ease;
+#temp-div p {
+    font-size: 60px;
+    margin-top: -30px;
 }
 
-.weather-info:hover {
-    transform: scale(1.05); /* Slight scale effect */
-}
-
-/* Temperature styling */
-.weather-info h2 {
-    font-size: 60px; /* Large temperature display */
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Temperature icon next to the number */
-.weather-info h2::before {
-    content: url('https://path-to-weather-icon.svg'); /* Insert appropriate weather icon */
-    display: inline-block;
-    margin-right: 10px;
-    width: 40px; /* Icon size */
-}
-
-/* Detailed weather information */
-.weather-info p {
+#weather-info {
     font-size: 20px;
-    color: #555;
 }
 
-/* Gradient effect for different temperatures (optional) */
-.weather-info.cold {
-    background: linear-gradient(145deg, #a0c4ff, #e0eafc); /* Cool gradient */
+#weather-icon {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 10px; 
+    margin-bottom: 0;
+    display: none;
 }
 
-.weather-info.warm {
-    background: linear-gradient(145deg, #ffe29f, #ffc107); /* Warm gradient */
+#hourly-forecast {
+    margin-top: 50px;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
 }
 
-.weather-info.hot {
-    background: linear-gradient(145deg, #ff9a9e, #fcb69f); /* Hot gradient */
-}
-
-/* Media Query for responsiveness */
-@media (max-width: 768px) {
-    .container {
-        padding: 20px;
-        max-width: 90%;
-    }
-
-    input, button {
-        font-size: 16px;
-    }
-
-    .weather-info h2 {
-        font-size: 50px;
-    }
-}
-.sign-in {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-.sign-in button {
-    background-color: #007BFF;
+.hourly-item {
+    flex: 0 0 auto;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
     color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
 }
+
+.hourly-item img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+#hourly-heading {
+    color: #fff;
+    margin-top: 10px;
+}
+

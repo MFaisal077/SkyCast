@@ -4,28 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="icon" type="image/x-icon" href="favicon-32x32.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
-    <div class="container">
-        <h1>Weather App</h1>
-        <input type="text" id="city" placeholder="Enter city name" />
-        <button id="getWeather">Get Weather</button>
+    <div id="weather-container">
+        <h2>Weather App</h2>
+        <input type="text" id="city" placeholder="Enter city">
+        <button onclick="getWeather()">Search</button>
 
-        <div class="weather-info" id="weatherInfo">
-            <h2 id="weatherCity"></h2>
-            <p id="weatherDescription"></p>
-            <p id="temperature"></p>
-        </div>
+        <img id="weather-icon" alt="Weather Icon">
+
+        <div id="temp-div"></div>
+
+        <div id="weather-info"></div>
+
+        <div id="hourly-forecast"></div>
     </div>
-<div class="sign-in">
-   
-        <button>Sign In</button>
-
-   
-</div>
-    <script src="script.js"></script>
-    
+    <div class="login">
+        <a href="LoginForm.html"><button>Login</button>
+         </a>
+         <a href=""><button>Sign Up</button></a>
+    </div>
+    <script src="./script.js"></script> 
 </body>
 </html>
