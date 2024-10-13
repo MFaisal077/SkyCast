@@ -6,25 +6,43 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
-    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <div id="weather-container">
-        <h2>Weather App</h2>
+        <h2>SkyCast</h2>
+        
+       
         <input type="text" id="city" placeholder="Enter city">
         <button onclick="getWeather()">Search</button>
 
-        <img id="weather-icon" alt="Weather Icon">
+       
+        <button onclick="getWeatherByLocation()">Use My Location</button>
 
+      
+        <div id="loading" style="display:none;">Loading...</div>
+
+      
+        <img id="weather-icon" alt="Weather Icon">
         <div id="temp-div"></div>
 
+       
         <div id="weather-info"></div>
 
-        <div id="hourly-forecast"></div>
-    </div>
- 
+       
+        <div id="extra-info"></div>
 
+      
+        <h3>Hourly Forecast</h3>
+        <div id="hourly-forecast"></div>
+
+     
+        <h3>5-Day Forecast</h3>
+        <div id="daily-forecast"></div>
+
+       
+        <div id="error-message"></div>
+    </div>
     
     <script src="./script.js"></script> 
 </body>
