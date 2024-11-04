@@ -1,16 +1,21 @@
+/* General styles */
 body {
     font-family: Arial, sans-serif;
     background: cyan;
     margin: 0;
     padding: 0;
     text-align: center;
- background-image: url(background-image.jpeg);
+    background-image: url(background-image.jpeg);
+    background-size: cover;
+    background-position: center;
 }
 
+/* Weather container styles */
 #weather-container {
     background-color: greenyellow;
-    width: 60%;
-    margin: 50px auto;
+    width: 80%;
+    max-width: 600px;
+    margin: 5vh auto; /* Adjusted for better centering on various screens */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -18,12 +23,13 @@ body {
 
 h2 {
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 2rem; /* Responsive font size */
 }
 
 input[type="text"] {
     padding: 10px;
-    width: 60%;
+    width: 100%;
+    max-width: 400px; /* Max width for large screens */
     border-radius: 5px;
     border: 1px solid #ccc;
     margin-bottom: 10px;
@@ -37,6 +43,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     margin: 5px;
+    width: 100px;
 }
 
 button:hover {
@@ -44,25 +51,26 @@ button:hover {
 }
 
 #weather-icon {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     margin: 20px 0;
 }
 
 #temp-div {
-    font-size: 36px;
+    font-size: 2.5rem; /* Responsive font size */
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 #weather-info, #extra-info {
-    font-size: 18px;
+    font-size: 1.125rem; /* Responsive font size */
     margin-bottom: 20px;
 }
 
 #hourly-forecast, #daily-forecast {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap; /* Allows wrapping for small screens */
 }
 
 .forecast-item {
@@ -71,9 +79,64 @@ button:hover {
     padding: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 45%; /* Makes items responsive */
+    margin-bottom: 10px;
 }
 
 #error-message {
     color: red;
-    font-size: 16px;
+    font-size: 1rem; /* Responsive font size */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    #weather-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    #temp-div {
+        font-size: 2rem;
+    }
+
+    button {
+        width: 90px;
+        font-size: 0.9rem;
+    }
+
+    #weather-info, #extra-info {
+        font-size: 1rem;
+    }
+
+    .forecast-item {
+        width: 100%; /* Full width on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #weather-container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    #temp-div {
+        font-size: 1.8rem;
+    }
+
+    button {
+        width: 80px;
+        font-size: 0.8rem;
+    }
+
+    #weather-info, #extra-info {
+        font-size: 0.9rem;
+    }
 }
